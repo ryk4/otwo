@@ -1,0 +1,100 @@
+/*@import url(https://db.onlinewebfonts.com/c/7200c6dd8ac604abe09f5159e53a40c0?family=Mark+Pro);*/
+
+@font-face{
+    font-family: "Mark Pro";
+    src: url("../fonts/mark-pro/mark-pro.eot");
+    src: url("../fonts/mark-pro/mark-pro2.eot")format("embedded-opentype"),
+    url("../fonts/mark-pro/mark-pro3.woff")format("woff"),
+    url("../fonts/mark-pro/mark-pro4.woff2")format("woff2"),
+    url("../fonts/mark-pro/mark-pro5.ttf")format("truetype");
+    /*url("https://db.onlinewebfonts.com/t/7200c6dd8ac604abe09f5159e53a40c0.svg#Mark Pro")format("svg");*/
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
+
+
+@font-face {
+    font-family: "ITC Souvenir";
+    src: url("../fonts/souvenir/Souvenir-Demi.eot");
+    src: url("../fonts/souvenir/Souvenir-Demi.eot?#iefix")
+    format("embedded-opentype"),
+    url("../fonts/souvenir/Souvenir-Demi.woff") format("woff"),
+    url("../fonts/souvenir/Souvenir-Demi.woff2") format("woff2"),
+    url("../fonts/souvenir/Souvenir-Demi.ttf") format("truetype"),
+    url("../fonts/souvenir/Souvenir-Demi.svg#Mark Pro") format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ITC Souvenir";
+    src: url("../fonts/souvenir/Souvenir-DemiItalic.eot");
+    src: url("../fonts/souvenir/Souvenir-DemiItalic.eot?#iefix")
+    format("embedded-opentype"),
+    url("../fonts/souvenir/Souvenir-DemiItalic.woff") format("woff"),
+    url("../fonts/souvenir/Souvenir-DemiItalic.woff2") format("woff2"),
+    url("../fonts/souvenir/Souvenir-DemiItalic.ttf") format("truetype"),
+    url("../fonts/souvenir/Souvenir-DemiItalic.svg#Mark Pro") format("svg");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ITC Souvenir";
+    src: url("../fonts/souvenir/Souvenir-Medium.eot");
+    src: url("../fonts/souvenir/Souvenir-Medium.eot?#iefix")
+    format("embedded-opentype"),
+    url("../fonts/souvenir/Souvenir-Medium.woff") format("woff"),
+    url("../fonts/souvenir/Souvenir-Medium.woff2") format("woff2"),
+    url("../fonts/souvenir/Souvenir-Medium.ttf") format("truetype"),
+    url("../fonts/souvenir/Souvenir-Medium.svg#Mark Pro") format("svg");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ITC Souvenir";
+    src: url("../fonts/souvenir/Souvenir-MediumItalic.eot");
+    src: url("../fonts/souvenir/Souvenir-MediumItalic.eot?#iefix")
+    format("embedded-opentype"),
+    url("../fonts/souvenir/Souvenir-MediumItalic.woff") format("woff"),
+    url("../fonts/souvenir/Souvenir-MediumItalic.woff2") format("woff2"),
+    url("../fonts/souvenir/Souvenir-MediumItalic.ttf") format("truetype"),
+    url("../fonts/souvenir/Souvenir-MediumItalic.svg#Mark Pro") format("svg");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ITC Souvenir";
+    src: url("../fonts/souvenir/Souvenir-Bold.eot");
+    src: url("../fonts/souvenir/Souvenir-Bold.eot?#iefix")
+    format("embedded-opentype"),
+    url("../fonts/souvenir/Souvenir-Bold.woff") format("woff"),
+    url("../fonts/souvenir/Souvenir-Bold.woff2") format("woff2"),
+    url("../fonts/souvenir/Souvenir-Bold.ttf") format("truetype"),
+    url("../fonts/souvenir/Souvenir-Bold.svg#Mark Pro") format("svg");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "ITC Souvenir";
+    src: url("../fonts/souvenir/Souvenir-BoldItalic.eot");
+    src: url("../fonts/souvenir/Souvenir-BoldItalic.eot?#iefix")
+    format("embedded-opentype"),
+    url("../fonts/souvenir/Souvenir-BoldItalic.woff") format("woff"),
+    url("../fonts/souvenir/Souvenir-BoldItalic.woff2") format("woff2"),
+    url("../fonts/souvenir/Souvenir-BoldItalic.ttf") format("truetype"),
+    url("../fonts/souvenir/Souvenir-BoldItalic.svg#Mark Pro") format("svg");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

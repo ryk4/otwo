@@ -1,0 +1,305 @@
+<?php
+
+namespace App\Actions\Quiz\Questions;
+
+use App\Enums\QuizPageType;
+
+class FetchQuizQuestionsForVaping
+{
+    public function handle(): array
+    {
+        return [
+            [
+                'id' => 1,
+                'type' => QuizPageType::single_select->value,
+                'question' => __('How long have you been vaping?'),
+                'description' => __('Help us understand your journey with smoking, so we can tailor the perfect quitting plan just for you'),
+                'answers' => [
+                    0 => __('Up to 1 year'),
+                    1 => __('1-5 years'),
+                    2 => __('6-10 years'),
+                    3 => __('More than 10 years'),
+                ],
+            ],
+            [
+                'id' => 2,
+                'type' => QuizPageType::single_select->value,
+                'question' => __('How often do you typically vape?'),
+                'description' => __('Your vaping frequency is a key factor in tailoring your quit plan'),
+                'answers' => [
+                    0 => __('Less than a few times per week'),
+                    1 => __('A few times throughout the day'),
+                    2 => __('Frequently, up to 20 times a day'),
+                    3 => __('Very frequently, more than 20 times a day'),
+                ],
+            ],
+            [
+                'id' => 3,
+                'type' => QuizPageType::single_select->value,
+                'question' => __('How soon after waking up do you typically start vaping?'),
+                'description' => __('Identifying your morning vaping habit helps adjust the timeline in your quit plan'),
+                'answers' => [
+                    0 => __('Within 5 minutes'),
+                    1 => __('Within 6-30 minutes'),
+                    2 => __('Within 31-60 minutes'),
+                    3 => __('After 60 minutes or more'),
+                ],
+            ],
+            [
+                'id' => 4,
+                'type' => QuizPageType::multi_select->value,
+                'question' => __('What are the main reasons you want to quit?'),
+                'description' => __('Understanding your reasons helps us shape a quit plan that targets your unique challenges.'),
+                'answers' => [
+                    0 => __('Health concerns'),
+                    1 => __('Financial savings'),
+                    2 => __('Enhancing fitness and energy levels'),
+                    3 => __('Improving physical appearance (e.g. skin)'),
+                    4 => __('Freedom from addiction'),
+                ],
+            ],
+            [
+                'id' => 5,
+                'type' => QuizPageType::multi_select->value,
+                'question' => __('What worries you the most about quitting?'),
+                'description' => __('Being aware of your fears can make your journey to quit less daunting.'),
+                'answers' => [
+                    0 => __("I don't want to face withdrawals"),
+                    1 => __("I don't want to gain weight"),
+                    2 => __("I don't want to miss out on socializing"),
+                    3 => __("I don't want to experience boredom without smoking"),
+                    4 => __("I don't want to fail quitting again"),
+                ],
+            ],
+            [
+                'id' => 6,
+                'type' => QuizPageType::multi_select->value,
+                'question' => __('Why do you vape?'),
+                'description' => __('Exploring the reasons behind your vaping habit empowers your journey to quit'),
+                'answers' => [
+                    0 => __('I vape to relieve stress and unwind'),
+                    1 => __('I vape out of habit or routine'),
+                    2 => __('I vape to cope with emotions'),
+                    3 => __('I vape to socialize'),
+                    4 => __('I vape due to addiction and cravings'),
+                    5 => __("I vape because it's healthier than smoking tobacco"),
+                ],
+            ],
+            [
+                'id' => 7,
+                'type' => QuizPageType::dynamic_loader->value,
+                'starting_percentage' => 0,
+                'ending_percentage' => 30,
+                'text_after_load' => __('Please answer a few more questions about your :value habits to uncover the underlying causes.', ['value' => 'vaping']),
+                'title_during_loading' => __("We're generating the opening chapters of your plan"),
+                'title_finished_loading' => __('Congratulations! Opening chapters of your quit plan are ready!'),
+                'description_finished_loading' => '',
+            ],
+            [
+                'id' => 8,
+                'type' => QuizPageType::multi_select->value,
+                'question' => __('What typically leads you to reach for a vape?'),
+                'description' => null,
+                'answers' => [
+                    0 => __("I vape when I'm feeling stressed"),
+                    1 => __('I vape while drinking alcohol'),
+                    2 => __('I vape during coffee breaks'),
+                    3 => __('I vape after finishing a meal'),
+                    4 => __('I vape first thing in the morning, or right before bed'),
+                    5 => __('I vape when I see others vaping'),
+                ],
+            ],
+            [
+                'id' => 9,
+                'type' => QuizPageType::multi_select->value,
+                'question' => __('What negative physical effects do you encounter due to vaping?'),
+                'description' => null,
+                'answers' => [
+                    0 => __('Shortness of breath'),
+                    1 => __('Persistent cough'),
+                    2 => __('Bad breath'),
+                    3 => __('Stained teeth'),
+                    4 => __('Premature skin aging'),
+                    5 => __('Frequent headaches'),
+                ],
+            ],
+            [
+                'id' => 10,
+                'type' => QuizPageType::multi_select->value,
+                'question' => __('What personal or social difficulties has vaping caused in your life?'),
+                'description' => null,
+                'answers' => [
+                    0 => __('Financial stress'),
+                    1 => __('Health concerns'),
+                    2 => __('Relationship strains'),
+                    3 => __('Low self-esteem'),
+                    4 => __('Work or career issues'),
+                ],
+            ],
+            [
+                'id' => 11,
+                'type' => QuizPageType::multi_select->value,
+                'question' => __('Who else in your life is affected by your vaping habits?'),
+                'description' => null,
+                'answers' => [
+                    0 => __('My spouse or partner'),
+                    1 => __('My children'),
+                    2 => __('My parents'),
+                    3 => __('My co-workers or friends'),
+                ],
+                'other_single_select_options' => [
+                    4 => __('No one else is notably affected'),
+                ],
+                'dependant_questions' => [
+                    [
+                        'depends_on' => [
+                            'id' => 11,
+                            'selections' => [0, 1, 2, 3, 'other'],
+                        ],
+                        'id' => 12,
+                        'type' => QuizPageType::multi_select->value,
+                        'question' => __('How are they impacted by your vaping habit?'),
+                        'description' => null,
+                        'answers' => [
+                            0 => __('Exposed to second-hand smoke'),
+                            1 => __('Concerned about my health'),
+                            2 => __('Bothered by the bad smell'),
+                            3 => __('Affected by my dependence'),
+                            4 => __('Picking up bad habits from me'),
+                        ],
+                    ],
+                    [
+                        'depends_on' => [
+                            'id' => 11,
+                            'selections' => [4],
+                        ],
+                        'id' => 12,
+                        'type' => QuizPageType::single_select->value,
+                        'question' => __('Have you ever tried to quit smoking?'),
+                        'description' => null,
+                        'answers' => [
+                            0 => __('Yes'),
+                            1 => __('No'),
+                            2 => __('Currently quitting'),
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'id' => 13,
+                'type' => QuizPageType::dynamic_loader->value,
+                'starting_percentage' => 30,
+                'ending_percentage' => 60,
+                'title_during_loading' => __('Constructing the second stage of your quit plan...'),
+                'text_after_load' => __('Identifying your morning :value habit helps adjust the timeline in your quit plan', ['value' => 'vaping']),
+                'title_finished_loading' => __("Great news! We've identified a strategy to assist your quit journey"),
+                'description_finished_loading' => __('Identifying your morning smoking habit helps adjust the timeline in your quit plan'),
+            ],
+            [
+                'id' => 14,
+                'type' => QuizPageType::single_select->value,
+                'question' => __("What's your gender?"),
+                'description' => null,
+                'answers' => [
+                    0 => __('Male'),
+                    1 => __('Female'),
+                ],
+            ],
+            [
+                'id' => 15,
+                'type' => QuizPageType::text_input->value,
+                'question' => __("What's your name?"),
+                'description' => null,
+            ],
+            [
+                'id' => 16,
+                'type' => QuizPageType::single_select->value,
+                'question' => __("What's your age?"),
+                'description' => null,
+                'answers' => [
+                    0 => __('18-25 years old'),
+                    1 => __('26-34 years old'),
+                    2 => __('35-44 years old'),
+                    3 => __('45-54 years old'),
+                    4 => __('55-64 years old'),
+                    5 => __('65+ years old'),
+                ],
+            ],
+            [
+                'id' => 17,
+                'type' => QuizPageType::single_select->value,
+                'question' => __('How much money do you typically spend on vaping?'),
+                'description' => null,
+                'answers' => [
+                    0 => __('Less than $50 a month'),
+                    1 => __('$50 to $150 per month'),
+                    2 => __('$150 to $300 per month'),
+                    3 => __('Over $300 per month'),
+                    4 => __("I don't know"),
+                ],
+            ],
+            [
+                'id' => 18,
+                'type' => QuizPageType::single_select->value,
+                'question' => __('Were you recommended OTWO by a healthcare professional (e.g. a doctor or consultant)'),
+                'description' => null,
+                'answers' => [
+                    0 => __('Yes'),
+                    1 => __('No'),
+                ],
+            ],
+            [
+                'id' => 19,
+                'type' => QuizPageType::single_select->value,
+                'question' => __('How ready are you to change your future for the better?'),
+                'description' => null,
+                'answers' => [
+                    0 => __('Very ready'),
+                    1 => __('Somewhat ready'),
+                    2 => __('Not at all ready'),
+                ],
+                'dependant_questions' => [
+                    [
+                        'depends_on' => [
+                            'id' => 19,
+                            'selections' => [0, 1],
+                        ],
+                        'id' => 20,
+                        'type' => QuizPageType::information_page->value,
+                        'title' => __("That's great!"),
+                        'description' => __('The key to a successful quit journey with OTWO book is your desire to embrace change and a healthier lifestyle.'),
+                        'image' => '/assets/images/information-page-image-1.png',
+                        'button_text' => __('Complete my quit plan'),
+                    ],
+                    [
+                        'depends_on' => [
+                            'id' => 19,
+                            'selections' => [2],
+                        ],
+                        'id' => 20,
+                        'type' => QuizPageType::information_page->value,
+                        'title' => __("That's okay!"),
+                        'description' => __('Just remember that the key to a successful quit journey with OTWO book is your desire to embrace change and a healthier lifestyle.'),
+                        'image' => '/assets/images/information-page-image-2.png',
+                        'button_text' => __('Complete my quit plan'),
+                    ],
+                ],
+            ],
+            [
+                'id' => 21,
+                'type' => QuizPageType::dynamic_loader->value,
+                'speed' => 120,
+                'starting_percentage' => 60,
+                'ending_percentage' => 100,
+                'next_step_when_loading_finished' => true,
+                'title_during_loading' => __('Designing the final step of your tailored vape-free journey...'),
+                'title_finished_loading' => null,
+                'description_finished_loading' => null,
+            ],
+            [
+                'id' => 22,
+                'type' => QuizPageType::results_page,
+            ],
+        ];
+    }
+}
