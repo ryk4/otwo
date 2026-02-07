@@ -21,11 +21,11 @@ class GeneratePlanAction
         self::generatePdfParts($quizEntry);
 
         $mergedPdf = self::mergePdfFiles($quizEntry);
-        $mergedPdf->save(env('MERGED_PDF_SAVE_LOCATION') . 'temporary-' . $bookName);
+        $mergedPdf->save(Storage::disk('public')->path('temporary-' . $bookName));
 
         self::saveGeneratedPlan($quizEntry, $bookName);
 
-        self::deleteTemporaryFiles($quizEntry, $bookName);
+//        self::deleteTemporaryFiles($quizEntry, $bookName);
     }
 
     private function generatePdfParts(QuizEntry $quizEntry): void
